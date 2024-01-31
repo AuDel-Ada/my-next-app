@@ -30,7 +30,7 @@ const UsersPage = async () => {
       <ul>
         {photos.slice(0, 5).map((photo) => (
           <li key={photo.id}>
-            {photo.title}: <a href={photo.url}>{photo.url}</a>
+            {photo.title}: <img src={photo.url} alt={photo.title} />
           </li>
         ))}
       </ul>
