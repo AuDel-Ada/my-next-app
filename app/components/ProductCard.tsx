@@ -6,7 +6,7 @@ interface ProductCardProps {
 }
 const ProductCard = ({ title, url }: ProductCardProps) => {
   return (
-    <div className="card w-80 bg-sky-700 shadow-xl m-5">
+    <div className="card card-compact glass w-80 bg-sky-700 shadow-xl m-5">
       <figure>
         <img src={url} alt={title} />
       </figure>
