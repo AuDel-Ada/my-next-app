@@ -1,6 +1,3 @@
-//routing by folder, rendering the page.tsx
-//rafce to begin the page easily
-
 import React from 'react';
 import Link from 'next/link';
 import ProductCard from '../components/ProductCard';

@@ -3,14 +3,16 @@ import Link from 'next/link';
 import Table from '../components/Table';
 import { ItemsProps } from '../components/Table';
 
+// Mocking data
 import * as fs from 'fs';
 import path from 'path';
 
-const basePathToData: string = path.join(__dirname, './infosCsrSsr.json');
-const data: ItemsProps[] = JSON.parse(fs.readFileSync(basePathToData, 'utf-8'));
-
 const messPage = () => {
-  const items = data;
+  const basePathToData: string = path.join(__dirname, './infosCsrSsr.json');
+  const data: ItemsProps[] = JSON.parse(
+    fs.readFileSync(basePathToData, 'utf-8')
+  );
+
   return (
     <div className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
@@ -32,7 +34,7 @@ const messPage = () => {
         <Table
           head1="Client-side rendering"
           head2="Server-side rendering"
-          items={items}
+          items={data}
         />
       </div>
     </div>

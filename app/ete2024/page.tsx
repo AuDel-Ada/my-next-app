@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import LineChartTest from '../components/LineChartTest';
 
 const summerPage = () => {
   return (
@@ -10,6 +11,9 @@ const summerPage = () => {
         </p>
       </div>
       <h1>Summer 2024 Plan</h1>
+      <div className="mb-32 text-center lg:text-left">
+        <LineChartTest />
+      </div>
       <p>
         Rappel : les JO de Paris se déroulent du vendredi 26 juillet au dimanche
         11 août, et du 28 août au 08 septembre ...{' '}
