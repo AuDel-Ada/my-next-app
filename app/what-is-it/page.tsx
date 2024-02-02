@@ -1,6 +1,15 @@
 import React from 'react';
+import Table from '../components/Table';
+import { ItemsProps } from '../components/Table';
+
+import * as fs from 'fs';
+import path from 'path';
+
+const basePathToData: string = path.join(__dirname, './infosCsrSsr.json');
+const data: ItemsProps[] = JSON.parse(fs.readFileSync(basePathToData, 'utf-8'));
 
 const messPage = () => {
+  const items = data;
   return (
     <div>
       <h1>What ? Why ?!</h1>
@@ -11,34 +20,11 @@ const messPage = () => {
         and not on Notions !
       </p>
       <h2>Client-side rendering VS Server-side rendering</h2>
-      <table className="w-5/6 text-left table-auto min-w-max">
-        <thead>
-          <tr className="border-b">
-            <th className="pb-2">Client-side rendering</th>
-            <th>Server-side rendering</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className="pt-1 pr-4">
-              ALL the components need to be bundled (which uses more memory to
-              load the components)
-            </td>
-            <td>truc</td>
-          </tr>
-          <tr>
-            <td>
-              No SEO, as the bots don't check the content ON the web browser
-            </td>
-            <td>truc</td>
-          </tr>
-          <tr>
-            <td>Less secure</td>
-            <td>truc</td>
-          </tr>
-        </tbody>
-      </table>
-      <p></p>
+      <Table
+        head1="Client-side rendering"
+        head2="Server-side rendering"
+        items={items}
+      />
     </div>
   );
 };
